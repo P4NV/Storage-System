@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color:white;
 }
 body{
     display: flex;
@@ -10,6 +11,7 @@ body{
     align-items: center;
     min-height: 100vh;
     position: relative;
+    background-color: rgb(30, 31, 34);
 }
 main{
     display: flex;
@@ -31,7 +33,6 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 70%;
 }
 .buttons_container{
@@ -40,7 +41,7 @@ header{
     gap: 40px;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
     padding: 10px 30px ;
     margin-top: 10px;
     border-radius: 40px;
@@ -55,19 +56,35 @@ header{
     font-size: 20px;
     color: white;
     font-weight: bold;
-    transition:box-shadow,scale 0.8s,width 0.8s, 0.8s;
+    transition:box-shadow,scale 0.8s,width 0.4s, 0.4s;
     padding: 5px 10px;
 }
 .item_categories_button:hover{
     scale:0.9;
-    box-shadow: 1px 5px 5px white;
+    box-shadow: 1px 5px 5px rgba(255, 255, 255, 0.5);
 }
 .items_container{
-
     display: flex;
-    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 75vw;
     height: 65vh;
     margin: 50px auto;
-    border:1px solid black;
-    position: relative;
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.5);
+    background-color: #2b2d30;
+    border-radius: 50px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    gap:5%;
+    padding: 80px 40px;
 }
+.item {
+    display: flex;
+    width: 20vw;
+    height: 25vh;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: darkred;
+}
+
