@@ -81,10 +81,32 @@ header{
 }
 .item {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 20vw;
     height: 25vh;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 30px;
     background-color: darkred;
+}
+.item h2 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+.cartBtn {
+    background: none;
+    border: none;
+    margin: auto 0 0 auto;
+
+    width: 35px;
+    height: 30px;
+}
+.cartBtn img {
+    width: 100%;
+    height: auto;
 }
 
