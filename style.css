@@ -25,6 +25,47 @@ header{
     display:flex;
     position: relative;
     margin:50px auto;
+    width: 100vw;
+}
+header h1 {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+#Your-cart{
+    display: flex;
+    position: absolute;
+    border-radius: 30px;
+    right: 50px;
+    padding: 10px;
+    top: 0;
+    width: 140px;
+    height: 40px;
+    overflow: hidden;
+    background-color: transparent;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out,padding 0.5s ease-in-out;
+}
+#Your-cart:hover{
+    background-color: grey;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 10px;
+    width: 250px;
+    height: 450px;
+}
+#Your-cart button{
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.4em;
+    font-weight: bolder;
+    text-shadow: 1px 0 2px red;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+#Your-cart:hover button{
+
 }
 
 .item_categories{
@@ -68,7 +109,7 @@ header{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 75vw;
+    width: 65vw;
     height: 65vh;
     margin: 50px auto;
     box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.5);
@@ -84,8 +125,8 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    height: 25vh;
+    width: 15vw;
+    height: 20vh;
     padding: 20px;
     border: 1px solid black;
     border-radius: 30px;
@@ -104,6 +145,11 @@ header{
 
     width: 35px;
     height: 30px;
+    transition: 0.3s ease-in-out;
+}
+.cartBtn:hover {
+    scale: 1.2;
+    cursor: pointer;
 }
 .cartBtn img {
     width: 100%;
