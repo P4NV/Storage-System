@@ -122,6 +122,8 @@ header h1 {
 }
 .item {
     display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -130,7 +132,13 @@ header h1 {
     padding: 20px;
     border: 1px solid black;
     border-radius: 30px;
-    background-color: darkred;
+    background-color: transparent;
+    backdrop-filter: blur(50px) blur(50px); /*make better blured backgorund*/
+}
+.itemImg{
+    height: 40%;
+    margin: auto;
+
 }
 .item h2 {
     text-align: center;
