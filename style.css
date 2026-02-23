@@ -12,7 +12,7 @@ body{
     align-items: center;
     min-height: 100vh;
     position: relative;
-    background: linear-gradient(160deg,rgb(30, 31, 34) 40%,darkred);
+    background: linear-gradient(158deg,rgb(30, 31, 34) 40%,darkred);
 }
 main{
     display: flex;
@@ -21,7 +21,6 @@ main{
     width: 100vw;
     flex-direction: column;
 }
-
 header{
     display:flex;
     position: relative;
@@ -44,11 +43,12 @@ header h1 {
     width: 140px;
     height: 40px;
     overflow: hidden;
-    background-color: transparent;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out,padding 0.5s ease-in-out;
+    background-color: #211e21;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out,padding 0.5s ease-in-out,box-shadow 0.8s ease-in-out;
 }
 #Your-cart:hover{
-    background-color: grey;
+    background-color: #211e21;
+    box-shadow: 0 0 10px white;
     flex-direction: column;
     border-radius: 30px;
     padding: 70px 10px;
@@ -65,10 +65,9 @@ header h1 {
     font-weight: bolder;
     text-shadow: 1px 0 2px red;
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 20px;
 }
-
 .item_categories{
 
     display: flex;
@@ -114,7 +113,7 @@ header h1 {
     height: 65vh;
     margin: 50px auto;
     box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.5);
-    background: linear-gradient(-20deg,rgb(30, 31, 34) 45%,darkred);
+    background: linear-gradient(-25deg,rgb(30, 31, 34) 35%,darkred);
     border-radius: 50px;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -156,8 +155,6 @@ header h1 {
     width: 100%;
     height: auto;
 }
-
-
 .cart-item{
     height: 25px;
     font-size: 1.2em;
