@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     color:white;
+    text-shadow: 1px 0 2px red;
 }
 body{
     display: flex;
@@ -11,7 +12,7 @@ body{
     align-items: center;
     min-height: 100vh;
     position: relative;
-    background-color: rgb(30, 31, 34);
+    background: linear-gradient(158deg,rgb(30, 31, 34) 40%,darkred);
 }
 main{
     display: flex;
@@ -20,7 +21,6 @@ main{
     width: 100vw;
     flex-direction: column;
 }
-
 header{
     display:flex;
     position: relative;
@@ -34,24 +34,28 @@ header h1 {
 }
 #Your-cart{
     display: flex;
+    flex-direction: column;
     position: absolute;
     border-radius: 30px;
     right: 50px;
-    padding: 10px;
+    padding: 0 10px;
     top: 0;
     width: 140px;
     height: 40px;
     overflow: hidden;
-    background-color: transparent;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out,padding 0.5s ease-in-out;
+    background-color: #211e21;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out, background-color 0.5s ease-in-out,padding 0.5s ease-in-out,box-shadow 0.8s ease-in-out;
 }
 #Your-cart:hover{
-    background-color: grey;
+    background-color: #211e21;
+    box-shadow: 0 0 10px white;
     flex-direction: column;
     border-radius: 30px;
-    padding: 10px;
+    padding: 70px 10px;
     width: 250px;
     height: 450px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 #Your-cart button{
     border: none;
@@ -62,12 +66,8 @@ header h1 {
     text-shadow: 1px 0 2px red;
     position: absolute;
     top: 10px;
-    left: 15px;
+    left: 20px;
 }
-#Your-cart:hover button{
-
-}
-
 .item_categories{
 
     display: flex;
@@ -113,7 +113,7 @@ header h1 {
     height: 65vh;
     margin: 50px auto;
     box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.5);
-    background-color: #2b2d30;
+    background: linear-gradient(-25deg,rgb(30, 31, 34) 35%,darkred);
     border-radius: 50px;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -163,4 +163,22 @@ header h1 {
     width: 100%;
     height: auto;
 }
+.cart-item{
+    height: 25px;
+    font-size: 1.2em;
+    margin: 5px;
+    padding: 0 5px;
+
+    /*cart items animations*/
+    opacity: 0;
+    transition:
+            opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+#Your-cart:hover .cart-item{
+    opacity: 1;
+    transition:
+            opacity 0.5s cubic-bezier(0.4, 0, 1, 1) 0.4s;
+}
+
+
 
