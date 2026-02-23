@@ -12,36 +12,43 @@ let yourCart = [];
 
 const items = {
     category1: [
-        { name: "Item 1.1", description: "This is the first item in category 1.", },
-        { name: "Item 1.2", description: "This is the second item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
+        { name: "ArduinoMega", description: "Arduino Mega",img:"/public/electronics/arduino_mega.png" },
+        { name: "ArduinoNano", description: "Arduino Nano",img:"/public/electronics/arduino_nano.png" },
+        { name: "Esp32", description: "Esp32",img:"/public/electronics/esp32.png" },
     ],
     category2: [
-        { name: "Item 2.1", description: "This is the first item in category 2." },
-        { name: "Item 2.2", description: "This is the second item in category 2.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
+        { name: "Capacitor", description: "Capacitor 35V",img:"/public/electronics/capacitor35v.png" },
+        { name: "Capacitor-1", description: "Capacitor",img:"/public/electronics/capacitor35v1.png" },
+        { name: "Capacitor-2", description: "Capacitor",img:"/public/electronics/capacitor-2.3v.png" },
+        { name: "Resistor", description: "Resistor",img:"/public/electronics/resistor.png" },
+        { name: "Transistor", description: "Transistor",img:"/public/electronics/transistor.png" },
+        { name: "Transistor-1", description: "Transistor",img:"/public/electronics/transistor-1.png" },
+        { name: "Led", description: "Led 5V",img:"/public/electronics/led.png" },
+        { name: "Resistor", description: "Resistor",img:"/public/electronics/resistor-1.png" },
+        { name: "Chip", description: "Chip",img:"/public/electronics/chip.png" },
+        { name: "MicroChip", description: "MicroChip",img:"/public/electronics/microChip.png" },
+        { name: "ATMega", description: "ATMega",img:"/public/electronics/ATmega.png" },
+        { name: "Transistor-2", description: "Transistor",img:"/public/electronics/transistor-2.png" },
+        { name: "JRC", description: "JRC-microControler",img:"/public/electronics/JRC.png" },
+        { name: "LmTransistor", description: "LmTransistor",img:"/public/electronics/LmTransistor.png" },
     ],
     category3: [
-        { name: "Item 3.1", description: "This is the first item in category 3.", },
-        { name: "Item 3.2", description: "This is the second item in category 3.", },
-        { name: "Item 3.3", description: "This is the third item in category 3.", },
-        { name: "Item 3.4", description: "This is the fourth item in category 3.", },
+        { name: "JoyStick", description: "Analog JoyStick",img:"/public/electronics/JoyStick.png" },
+        { name: "Sensor", description: "Sensor",img:"/public/electronics/Sensor.png" },
+        { name: "Transferrer", description: "Transferrer",img:"/public/electronics/Transferrer.png" },
+        { name: "Wetness Detector", description: "Wetness Detector",img:"/public/electronics/Wetness-detector.png" },
+        { name: "pMod-nav", description: "pMod-nav",img:"/public/electronics/pmod_nav.png" },
+        { name: "Alarm", description: "Alarm",img:"/public/electronics/Alarm.png" },
     ],
     category4: [
-        { name: "Item 4.1", description: "This is the first item in category 4.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
-        { name: "Item 1.3", description: "This is the third item in category 1.", },
+        { name: "Item 4.1", description: "This is the first item in category 4.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
+        { name: "Item 1.3", description: "This is the third item in category 1.",img:"/public/electronics/arduino_mega.png" },
     ]
 };
 
@@ -64,16 +71,21 @@ function createItems(itemsArray) {
         const Desc = document.createElement('p');
         const CartBtn = document.createElement('button');
         const CartImg = document.createElement('img');
+        const ItemImage = document.createElement('img');
+
         CartImg.src = './public/cart.png';
         CartImg.alt = 'Add to cart';
+        ItemImage.src = itemData.img;
 
         CartBtn.classList.add('cartBtn');
         Header.classList.add('itemName');
         Desc.classList.add('itemDesc');
+        ItemImage.classList.add('itemImg');
 
         Header.textContent = itemData.name;
         Desc.textContent = itemData.description;
 
+        newItem.appendChild(ItemImage);
         newItem.appendChild(Header);
         newItem.appendChild(Desc);
         newItem.appendChild(CartBtn);
