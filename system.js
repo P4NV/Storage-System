@@ -5,7 +5,7 @@ const buttonCategory3 = document.getElementById("categoryButton3");
 const buttonCategory4 = document.getElementById("categoryButton4");
 
 const ItemsContainer = document.getElementById("itemsContainer");
-const yourCartContainer = document.getElementById('Your-cart');
+const yourCartContainer = document.getElementById('cart-items-container');
 
 // This will hold the data for the items in the user's cart
 let yourCart = [];
@@ -61,6 +61,11 @@ const allCategories = () => {
 }
 document.addEventListener('DOMContentLoaded', allCategories);
 
+const btn = document.getElementById("allCategoriesBtn");
+btn.addEventListener("click", () => {
+    allCategories()
+})
+
 function createItems(itemsArray) {
     const fragment = document.createDocumentFragment();
     for (const itemData of itemsArray) {
@@ -111,11 +116,37 @@ function renderCartItems(){
     // Add each item from the yourCart array to the DOM
     yourCart.forEach(item => {
         const itemEl = document.createElement('div');
+        const nameEl = document.createElement('p');
+        const imgEl = document.createElement('img');
+        const deleteBtnEl = document.createElement('button');
+
         itemEl.classList.add('cart-item');
-        itemEl.textContent = item.name; // Display the item name
+        nameEl.textContent = item.name; // Display the item name
+        imgEl.src = item.img;
+        deleteBtnEl.textContent = '🗑️';
+        deleteBtnEl.classList.add('deleteBtn');
+
+        itemEl.appendChild(imgEl);
+        itemEl.appendChild(nameEl);
+        itemEl.appendChild(deleteBtnEl);
+
         yourCartContainer.appendChild(itemEl);
+        console.log(itemEl);
     });
 }
+function deleteCartItem() {
+    yourCartContainer.addEventListener('click', (e) => {
+        if (e.target.closest('.deleteBtn')) {
+            const cartItem = e.target.closest('.cart-item');
+            const name = cartItem.querySelector('p').textContent;
+            cartItem.remove();
+            yourCart = yourCart.filter(item => item.name !== name);
+        }
+    });
+}
+
+deleteCartItem();
+
 
 // Event Delegation for "Add to Cart" buttons
 ItemsContainer.addEventListener("click", (event) => {
@@ -128,13 +159,15 @@ ItemsContainer.addEventListener("click", (event) => {
             // Extract data from within the specific item
             const name = itemElement.querySelector('.itemName').textContent;
             const description = itemElement.querySelector('.itemDesc').textContent;
+            const img = itemElement.querySelector('.itemImg').src;
 
             // Create an object for the cart
             const cartItem = {
                 name: name,
-                description: description
-            };
+                description: description,
+                img: img
 
+            };
             // Push the data to the yourCart array
             yourCart.push(cartItem);
 

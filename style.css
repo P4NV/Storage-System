@@ -57,7 +57,7 @@ header h1 {
     overflow-y: scroll;
     scrollbar-width: none;
 }
-#Your-cart button{
+#Your-cart-btn{
     border: none;
     background: none;
     color: white;
@@ -164,16 +164,35 @@ header h1 {
     height: auto;
 }
 .cart-item{
-    height: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+
+    height: 50px;
     font-size: 1.2em;
-    margin: 5px;
-    padding: 0 5px;
+    margin: 5px 0;
 
     /*cart items animations*/
     opacity: 0;
     transition:
             opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
 }
+.cart-item img {
+    height: 100%;
+    object-fit: contain;
+}
+.deleteBtn{
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: auto; /* pushes it to the right */
+    font-size: 1em;
+}
+
 #Your-cart:hover .cart-item{
     opacity: 1;
     transition:
